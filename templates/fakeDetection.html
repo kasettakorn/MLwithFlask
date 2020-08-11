@@ -1,0 +1,22 @@
+{% extends "headersrc.html" %}
+
+
+{% block content %}
+		
+<form class="md-form" action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+    <div id="body">
+        <div align="center">
+            <img src="{{ url_for('static', filename = 'images/photo-2.png') }}" style="margin-top: 30px;width:200px;height:200px;" class="rounded"  alt="User Image"/>
+            <div style="color: black; margin-top: 50px; ">
+                <span for="file" class="btn btn-default">เลือกรูปภาพที่ต้องการตรวจจับ</span>
+                <input type="file" name="image" id="file" accept=".jpg, .jpeg" required>
+                <input type="submit" class="btn btn-success" value="Submit"></input>
+            </div>
+            
+        
+        </div>
+        
+    </div>
+</form>
+
+{% endblock %}

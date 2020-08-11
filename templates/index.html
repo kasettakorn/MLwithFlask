@@ -1,0 +1,27 @@
+{% extends "headersrc.html" %}
+
+
+{% block content %}
+		
+<h3>Welcome</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+    <tr>
+      <td scope="row">{{row.0}}</td>
+      <td>{{row.1}}</td>
+      <td>{{row.2}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock %}

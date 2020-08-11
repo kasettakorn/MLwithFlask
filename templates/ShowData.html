@@ -1,0 +1,17 @@
+{% extends "headersrc.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+		
+<div align="center">
+    <img src="{{ url_for('static', filename = 'images/image.jpg') }}" style="margin-top: 30px;width:50%;height: 50%;border-radius: 20px;" alt="User Image"/>
+    
+   <h4>ความน่าจะเป็นรูปตัดต่อ = {{fakeRate}}%</h4>
+   <h4>ความน่าจะเป็นรูปจริง  = {{realRate}}%</h4>
+
+   <button type="button"  class="btn btn-primary"><a style="color:white;" href="{{ url_for('fake_detection') }}">เลือกรูปใหม่</a></button>
+        
+</div>
+
+{% endblock %}
