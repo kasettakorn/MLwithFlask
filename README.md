@@ -33,13 +33,13 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1. Python 3 or later
-2. Python following libraries tensorflow opencv-contrib-python h5py numpy scipy pillow matplotlib keras
+2. Python following libraries tensorflow opencv-contrib-python h5py numpy scipy pillow matplotlib keras OR download Anaconda
 3. GPU runtime is recommend
 
 
 ## 🎈 Usage <a name="usage"></a>
-
-Using following command "python app.py" or run all for Jupiter Notebook or Google Colaboratory
+1. Set interpreter as conda in VSCode
+2. Using following command "python app.py" or run all for Jupiter Notebook or Google Colaboratory
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
