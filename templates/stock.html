@@ -1,0 +1,62 @@
+{% extends "headersrc.html" %}
+
+
+{% block content %}
+
+<h1>Stock Price Forecast</h1>
+
+<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+    window.onload = function () {
+
+        function generateDateList(numDays) {
+            var dateList = [];
+            var currentDate = new Date();
+
+            for (var i = 0; i < numDays; i++) {
+                // Add each date to the dateList array
+                dateList.push(new Date(currentDate.setDate(currentDate.getDate() + 1)));
+
+
+
+            }
+
+            return dateList;
+        }
+
+        var numDays = 10;
+        var dateList = generateDateList(numDays);
+
+
+
+        var myValues = JSON.parse("{{values}}");
+
+        var dataPoints = [];
+
+
+
+        for (var i = 0; i < myValues.length; i++) {
+            dataPoints.push({ x: dateList[i], y: myValues[i] });
+        }
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Simple Line Chart"
+            },
+            data: [{
+                type: "line",
+                indexLabelFontSize: 16,
+                dataPoints: dataPoints
+            }]
+        });
+        chart.render();
+
+    }
+
+
+</script>
+{% endblock %}
